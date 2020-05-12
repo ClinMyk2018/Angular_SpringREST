@@ -23,6 +23,11 @@ public class AnSpRestApplication implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
+    	
+    	// Count how many employees are in database to see if you need to load these at start
+    	long dbEmpty = employeeRepository.count();
+    	// Is DataBase Empty?
+    	if(dbEmpty == 0) {
 
         // Create an employee
         Employee employee = new Employee();
@@ -30,18 +35,22 @@ public class AnSpRestApplication implements CommandLineRunner {
         employee.setLastName("MeLst");
         employee.setEmailId("MeFrstLst@gmail.com");
         employeeRepository.save(employee);
+        
         // Create an employee
         Employee employee1 = new Employee();
         employee1.setFirstName("Tom");
         employee1.setLastName("Cruise");
         employee1.setEmailId("tom@gmail.com");
         employeeRepository.save(employee1);
-     // Create an employee
+        
+        // Create an employee
         Employee employee2 = new Employee();
         employee2.setFirstName("Tony");
         employee2.setLastName("Stark");
         employee2.setEmailId("tony@gmail.com");
         employeeRepository.save(employee2);
+        
+    	}
     }
 
     public static void main(String[] args) {

@@ -1,0 +1,48 @@
+
+<div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link active" href="#">Active</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Link</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card" style="width: 26rem;">
+      <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
+    
+      <div class="card-body">
+        <h5 class="card-title">{{currentTime | date : 'fullDate'}}</h5>
+        <p class="card-text">{{todaysSummary}}</p>
+      </div>
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">Temp: {{temperature}}</li>
+        <li class="list-group-item">DP: {{dewPoint}}</li>
+        <li class="list-group-item">Humidity: {{humidity}}</li>
+        <li class="list-group-item">Visibility: {{visibility}}km</li>
+        <li class="list-group-item">Pressure: {{pressure}}mb</li>
+        <li class="list-group-item">Wind Direction: {{windBearing}}</li>
+        <li class="list-group-item">Wind Speed: {{windSpeed}}kt</li>
+        <li class="list-group-item">Gust: {{windGust}}kt</li>
+      </ul>
+      <div class="card-body">
+        <a href="#" class="card-link">Print Forecast</a>
+        <a href="#" class="card-link">Some Oter Btn</a>
+      </div>
+  </div>
+    <!-- <div class="card-body">
+      <h5 class="card-title">{{currentTime | date : 'fullDate'}}</h5>
+      <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This content is a little longer.</p>
+      <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div> -->
+</div>
+
+
+<div>
+  <h2>Weather Message: {{long}}</h2>
+</div>

@@ -1,4 +1,5 @@
 candidate.for.install.coupon=false
+codemix.newfile.notification.css=false
 codemix.settings.migration=true
 contextual.actions.preferences.migrated=true
 deletedObsoleteMarkers=true

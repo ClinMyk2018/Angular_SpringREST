@@ -1,0 +1,131 @@
+import { Component, OnInit, Query } from '@angular/core';
+import { environment } from '../../environments/environment';
+import * as mapboxgl from 'mapbox-gl';
+import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
+
+
+@Component({
+  selector: 'app-ui-map',
+  templateUrl: './ui-map.component.html',
+  styleUrls: ['./ui-map.component.css']
+})
+
+export class UiMapComponent implements OnInit {
+
+  constructor() { }
+
+
+ngOnInit() {
+
+  this.initMap();
+  this.initMarker();
+}
+
+// MAKE MAP FUNCTION TO LOAD MAP AND DO EVERYTHING ELSE
+initMap() {
+(mapboxgl as any).accessToken = environment.mapbox.accessToken;
+
+let map = new mapboxgl.Map({
+    container: 'map',
+    style: 'mapbox://styles/mapbox/streets-v11',
+    center: [-98.491142, 29.424349],
+    zoom: 7
+  });
+
+map.addControl(this.geoCode(), 'top-left');   // Puts geocoder input in top-left
+map.addControl(new mapboxgl.NavigationControl()); // Puts the zoom and compass on right
+
+map.on('click', function(e) {
+  console.log('A click event has occurred at ' + e.lngLat.lat);
+});
+return map;
+}
+
+// MAKE MARKER FUNCTION SO IF MARKER IS MOVED YOU GET THE DATA
+initMarker() {
+
+  const marker = new mapboxgl.Marker({
+    draggable: true
+  })
+  .setLngLat([-98.491142, 29.424349])
+  .addTo(this.initMap());
+
+  function onDragEnd() {
+const lngLat = marker.getLngLat();
+console.log(lngLat.lat + ', ' + lngLat.lng);
+
+}
+  marker.on('dragend', onDragEnd);
+}
+
+// MAKE WEATHER FUNCTION
+initWeather() {
+
+}
+
+geoCode() {
+  const geocoder = new MapboxGeocoder({
+accessToken: mapboxgl.accessToken,
+localGeocoder: this.coordinatesGeocoder,
+center: Query,
+zoom: 6,
+// marker: mapboxgl.Marker,
+mapboxgl
+});
+
+  geocoder.on('result', function(res) {
+    const geoLatLng = res.result.center;
+    console.log(geoLatLng[0]);
+  });
+
+  return geocoder;
+}
+
+coordinatesGeocoder = function(query: { match: (arg0: RegExp) => boolean; }) {
+const matches = query.match(
+/^[ ]*(?:Lat: )?(-?\d+\.?\d*)[, ]+(?:Lng: )?(-?\d+\.?\d*)[ ]*$/i
+);
+if (!matches) {
+return null;
+}
+
+
+function coordinateFeature(lng: string | number, lat: string | number) {
+return {
+center: [lng, lat],
+geometry: {
+type: 'Point',
+coordinates: [lng, lat]
+},
+place_name: 'Lat: ' + lat + ' Lng: ' + lng,
+place_type: ['coordinate'],
+properties: {},
+type: 'Feature'
+};
+}
+
+const coord1 = Number(matches[1]);
+const coord2 = Number(matches[2]);
+const geocodes = [];
+
+if (coord1 < -90 || coord1 > 90) {
+// must be lng, lat
+geocodes.push(coordinateFeature(coord1, coord2));
+}
+
+if (coord2 < -90 || coord2 > 90) {
+// must be lat, lng
+geocodes.push(coordinateFeature(coord2, coord1));
+}
+
+if (geocodes.length === 0) {
+// else could be either lng, lat or lat, lng
+geocodes.push(coordinateFeature(coord1, coord2));
+geocodes.push(coordinateFeature(coord2, coord1));
+}
+console.log(geocodes);
+return geocodes;
+};
+
+
+}

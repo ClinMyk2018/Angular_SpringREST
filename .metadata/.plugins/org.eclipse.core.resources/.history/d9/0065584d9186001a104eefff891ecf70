@@ -1,5 +1,0 @@
-package com.AnSp.RESTService.repository;
-
-public class EmployeeServiceImpl {
-
-}

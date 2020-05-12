@@ -1,5 +1,0 @@
-package com.AnSp.RESTService.beans;
-
-public class EmployeeDTO {
-
-}

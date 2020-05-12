@@ -1,0 +1,34 @@
+import { Component, OnInit } from '@angular/core';
+import { environment } from '../../environments/environment';
+import { UiMapComponent } from '../ui-map/ui-map.component';
+import {WeatherDataService} from '../weather-data.service';
+import { Router } from '@angular/router';
+
+@Component({
+  selector: 'app-weather-data',
+  templateUrl: './weather-data.component.html',
+  styleUrls: ['./weather-data.component.css']
+})
+export class WeatherDataComponent extends UiMapComponent implements OnInit {
+
+  constructor(private weatherDataService: WeatherDataService, private router: Router) {
+    super();
+  }
+
+  ngOnInit(): void {
+
+    this.loadWeatherData();
+  }
+
+  loadWeatherData() {
+    let latitude = this.mapData[0];
+    let longitude = this.mapData[1];
+    const baseForecastUrl = 'https://api.darksky.net/forecast/' +
+                                environment.darksky.accessToken +
+                                '/' + [latitude] + ',' + [longitude];
+
+    console.log(baseForecastUrl);
+
+  }
+
+}
