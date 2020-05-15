@@ -5,12 +5,14 @@ import { Routes, RouterModule } from '@angular/router';
 import { EmployeeListComponent } from './employee-list/employee-list.component';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UiMapComponent } from './ui-map/ui-map.component';
+import { AllLocationsComponent } from './all-locations/all-locations.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: 'employees', component: EmployeeListComponent },
   { path: 'add', component: CreateEmployeeComponent },
   // { path: 'map', component: UiMapComponent },
+  { path: 'locations', component: AllLocationsComponent },
   { path: 'update/:id', component: UpdateEmployeeComponent },
   { path: 'details/:id', component: EmployeeDetailsComponent },
 ];

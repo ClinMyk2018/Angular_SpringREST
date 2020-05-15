@@ -5,8 +5,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 
 @Entity
 @Table(name = "userSavedLocations")
@@ -14,7 +18,7 @@ public class UserSavedLocations {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "ID", unique = true, nullable = false)
+    @Column(name = "ID", nullable = false)
     private Integer locationId;
 
     @Column(name = "LOCATION_NAME", nullable = false, length = 100)
@@ -27,7 +31,10 @@ public class UserSavedLocations {
     private String locationLong;
 
     @ManyToOne
+    @JoinColumn(name = "employee_id", nullable = false)
+    @JsonBackReference
     private Employee employee;
+    
 
     public UserSavedLocations() {
 

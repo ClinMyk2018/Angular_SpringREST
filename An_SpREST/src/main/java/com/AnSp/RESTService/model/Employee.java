@@ -8,16 +8,19 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 
 @Entity
 @Table(name = "employees")
 public class Employee {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "employee_id", nullable = false)
     private long employeeId;
 
     @Column(name = "first_name", nullable = false)
@@ -29,9 +32,10 @@ public class Employee {
     @Column(name = "email_address", nullable = false)
     private String emailId;
 
-    @OneToMany(cascade = CascadeType.ALL)
-    @JoinColumn(name = "EMPLOYEE_ID")
+    @OneToMany(mappedBy = "employee", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private Set<UserSavedLocations> locations;
+    
 
     public Employee() {
 

@@ -28,7 +28,7 @@ import com.AnSp.RESTService.service.EmployeeService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class EmployeeController {
 	
 	@Autowired
