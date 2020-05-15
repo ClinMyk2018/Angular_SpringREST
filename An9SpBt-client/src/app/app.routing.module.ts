@@ -10,7 +10,7 @@ const routes: Routes = [
   { path: '', redirectTo: 'employee', pathMatch: 'full' },
   { path: 'employees', component: EmployeeListComponent },
   { path: 'add', component: CreateEmployeeComponent },
-  { path: 'map', component: UiMapComponent },
+  // { path: 'map', component: UiMapComponent },
   { path: 'update/:id', component: UpdateEmployeeComponent },
   { path: 'details/:id', component: EmployeeDetailsComponent },
 ];

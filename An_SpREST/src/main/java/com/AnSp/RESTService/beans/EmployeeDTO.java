@@ -5,7 +5,7 @@ import java.io.Serializable;
 public class EmployeeDTO implements Serializable{
 
 	private static final long serialVersionUID = 1L;
-	private long id;
+	private long employeeId;
 	private String firstName;
 	private String lastName;
 	private String emailId;
@@ -21,11 +21,11 @@ public class EmployeeDTO implements Serializable{
 		this.emailId = emailId;
 	}
 	
-	public long getId() {
-		return id;
+	public long getEmployeeId() {
+		return employeeId;
 	}
-	public void setId(long id) {
-		this.id = id;
+	public void setEmployeeId(long id) {
+		this.employeeId = id;
 	}
 	
 	public String getFirstName() {
