@@ -12,6 +12,9 @@ import { UiMapComponent } from './ui-map/ui-map.component';
 import { WeatherDataComponent } from './weather-data/weather-data.component';
 import { MapWeatherServiceService } from './mapWeatherService.service';
 import { AllLocationsComponent } from './all-locations/all-locations.component';
+import { SelectedlocationComponent } from './selectedlocation/selectedlocation.component';
+import { UpdatelocationComponent } from './updatelocation/updatelocation.component';
+import { NewLocationComponent } from './new-location/new-location.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -21,7 +24,10 @@ import { AllLocationsComponent } from './all-locations/all-locations.component';
     UpdateEmployeeComponent,
     UiMapComponent,
     WeatherDataComponent,
-    AllLocationsComponent
+    AllLocationsComponent,
+    SelectedlocationComponent,
+    UpdatelocationComponent,
+    NewLocationComponent
   ],
   imports: [
     BrowserModule,

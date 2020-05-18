@@ -11,19 +11,19 @@ export class UserSavedLocationsService {
 
   constructor(private http: HttpClient) { }
 
-  getUserSavedLocations(locationId: number): Observable<any> {
+  getLocation(locationId: number): Observable<any> {   // <-- needs back-end
     return this.http.get(`${this.baseUrl}/${locationId}`);
   }
 
-  createUserSavedLocations(userSavedLocations: object): Observable<object> {
+  createLocation(userSavedLocations: object): Observable<object> {   // <-- needs back-end
     return this.http.post(`${this.baseUrl}`, userSavedLocations);
   }
 
-  updateUserSavedLocations(locationId: number, value: any): Observable<object> {
+  updateLocation(locationId: number, value: any): Observable<object> {   // <-- needs back-end
     return this.http.put(`${this.baseUrl}/${locationId}`, value);
   }
 
-  deleteUserSavedLocations(locationId: number): Observable<any> {
+  deleteLocation(locationId: number): Observable<any> {   // <-- needs back-end
     return this.http.delete(`${this.baseUrl}/${locationId}`, { responseType: 'text' });
   }
 
