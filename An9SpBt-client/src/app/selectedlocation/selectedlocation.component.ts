@@ -32,8 +32,8 @@ export class SelectedlocationComponent implements OnInit {
     this.router.navigate(['locations']);
   }
 
-  // updateLocation(locationId: number) {
-  //   this.router.navigate(['updatelocation', id]);
-  // }
+  updateLocation(locationId: number) {
+    this.router.navigate(['updatelocation', locationId]);
+  }
 
 }

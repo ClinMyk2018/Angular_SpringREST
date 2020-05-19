@@ -3,18 +3,18 @@
 <hr/>
 <div *ngIf="location">
   <div>
-    <label><b>First Name: </b></label> {{location.locationName}}
+    <label><b>Location Name: </b></label> {{location.locationName}}
   </div>
   <div>
-    <label><b>Last Name: </b></label> {{location.locationLat}}
+    <label><b>Location Lat: </b></label> {{location.locationLat}}
   </div>
   <div>
-    <label><b>Email Id: </b></label> {{location.locationLong}}
+    <label><b>Location Long: </b></label> {{location.locationLong}}
   </div>  
 </div>
 
 <br>
 <br>
 <button (click)="list()" class="btn btn-primary">See All Saved Locations</button>
-<!-- <button (click)="updateEmployee(employee.employeeId)" class="btn btn-info" style="margin-left: 10px">Update</button> -->
+<button (click)="updateLocation(location.locationId)" class="btn btn-info" style="margin-left: 10px">Update</button>
 <br>

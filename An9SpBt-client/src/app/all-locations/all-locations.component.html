@@ -18,7 +18,6 @@
             <td>{{location.locationLat}}</td>
             <td>{{location.locationLong}}</td>
             <td>
-                <!-- <button class="btn btn-danger">Delete</button> -->
                 <button (click)="deleteLocation(location.locationId)" class="btn btn-danger">Delete</button>
                 <button (click)="updateLocation(location.locationId)" class="btn btn-info" style="margin-left: 10px">Update</button>
                 <button (click)="locationDetails(location.locationId)" class="btn btn-info" style="margin-left: 10px">Details</button>
