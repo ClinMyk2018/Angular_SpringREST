@@ -92,14 +92,11 @@ public class UserSavedLocations {
     public void setEmployee(Employee employee) {
         this.employee = employee;
     }
-    
 
     @Override
     public String toString() {
         return "UserSavedLocations [employee=" + employee + ", locationId=" + locationId + ", locationLat="
                 + locationLat + ", locationLong=" + locationLong + ", locationName=" + locationName + "]";
     }
-
-
 
 }

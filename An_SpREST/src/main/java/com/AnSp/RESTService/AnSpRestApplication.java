@@ -75,7 +75,7 @@ public class AnSpRestApplication implements CommandLineRunner {
     	}
     	
     	if (dbLocationsTableEmpty < 1) {
-    		
+
             // Create a test location
             UserSavedLocations location = new UserSavedLocations();
             location.setLocationLat("29");
