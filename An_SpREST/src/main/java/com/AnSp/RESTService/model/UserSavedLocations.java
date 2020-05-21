@@ -19,7 +19,7 @@ public class UserSavedLocations {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "ID", nullable = false)
-    private Integer locationId;
+    private long locationId;
 
     @Column(name = "LOCATION_NAME", nullable = false, length = 100)
     private String locationName;
@@ -31,7 +31,7 @@ public class UserSavedLocations {
     private String locationLong;
 
     @ManyToOne
-    @JoinColumn(name = "employee_id", nullable = false)
+    @JoinColumn(name = "employee_id")
     @JsonBackReference
     private Employee employee;
     
@@ -46,27 +46,18 @@ public class UserSavedLocations {
         this.locationLong = locationLong;
     }
 
-    public UserSavedLocations(String locationName, String locationLat, String locationLong, Employee employee) {
-        this.locationName = locationName;
-        this.locationLat = locationLat;
-        this.locationLong = locationLong;
-        this.employee = employee;
-    }
-
-    public UserSavedLocations(Integer locationId, String locationName, String locationLat, String locationLong,
-            Employee employee) {
+    public UserSavedLocations(long locationId, String locationName, String locationLat, String locationLong) {
         this.locationId = locationId;
         this.locationName = locationName;
         this.locationLat = locationLat;
         this.locationLong = locationLong;
-        this.employee = employee;
     }
 
-    public Integer getLocationId() {
+    public long getLocationId() {
         return locationId;
     }
 
-    public void setLocationId(Integer locationId) {
+    public void setLocationId(long locationId) {
         this.locationId = locationId;
     }
 

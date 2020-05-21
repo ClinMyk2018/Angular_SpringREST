@@ -11,12 +11,15 @@ import org.springframework.stereotype.Repository;
 //import org.springframework.data.jpa.repository.Query;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Repository
 public interface LocationsRepository extends CrudRepository<UserSavedLocations, Long>{
 
-//	@Query(value = "select * from user_saved_locations", nativeQuery = true)
 	List<UserSavedLocations> findAll();
+
+	Optional<UserSavedLocations> getUserSavedLocationsBylocationId(Long locationId);
+
 
 }

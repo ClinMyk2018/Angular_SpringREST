@@ -33,7 +33,7 @@ public class AnSpRestApplication implements CommandLineRunner {
     	// Count how many employees are in database to see if you need to load these at start
     	long dbEmployeeTableEmpty = employeeRepository.count();
     	// Is DataBase Empty?
-    	if(dbEmployeeTableEmpty == 0) {
+    	if(dbEmployeeTableEmpty < 1) {
 
         // Create an employee
         Employee employee = new Employee();
@@ -74,8 +74,8 @@ public class AnSpRestApplication implements CommandLineRunner {
         
     	}
     	
-    	if (dbLocationsTableEmpty == 0) {
-    		
+    	if (dbLocationsTableEmpty < 1) {
+
             // Create a test location
             UserSavedLocations location = new UserSavedLocations();
             location.setLocationLat("29");
@@ -83,6 +83,13 @@ public class AnSpRestApplication implements CommandLineRunner {
             location.setLocationName("Test Location");
             location.setEmployee(employeeRepository.getOne(1L)); 
             locationsRepository.save(location);
+            
+            UserSavedLocations location1 = new UserSavedLocations();
+            location1.setLocationLat("30");
+            location1.setLocationLong("-93");
+            location1.setLocationName("Test Location Extra");
+            location1.setEmployee(employeeRepository.getOne(2L)); 
+            locationsRepository.save(location1);
             
     	}
     }
