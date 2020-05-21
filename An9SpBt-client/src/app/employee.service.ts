@@ -1,15 +1,14 @@
-import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Observable } from 'rxjs';
+import { Injectable } from "@angular/core";
+import { HttpClient } from "@angular/common/http";
+import { Observable } from "rxjs";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root",
 })
 export class EmployeeService {
+  private baseUrl = "http://localhost:8080/springboot-crud-rest/api/employees";
 
-  private baseUrl = 'http://localhost:8080/springboot-crud-rest/api/employees';
-
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {}
 
   getEmployee(employeeId: number): Observable<any> {
     return this.http.get(`${this.baseUrl}/${employeeId}`);
@@ -24,7 +23,9 @@ export class EmployeeService {
   }
 
   deleteEmployee(employeeId: number): Observable<any> {
-    return this.http.delete(`${this.baseUrl}/${employeeId}`, { responseType: 'text' });
+    return this.http.delete(`${this.baseUrl}/${employeeId}`, {
+      responseType: "text",
+    });
   }
 
   getEmployeesList(): Observable<any> {
