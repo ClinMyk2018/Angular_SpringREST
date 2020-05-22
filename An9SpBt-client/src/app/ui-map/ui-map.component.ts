@@ -2,7 +2,6 @@ import { Component, OnInit, Query } from '@angular/core';
 import { environment } from '../../environments/environment';
 import * as mapboxgl from 'mapbox-gl';
 import * as MapboxGeocoder from '@mapbox/mapbox-gl-geocoder';
-import { MapWeatherServiceService } from '../mapWeatherService.service';
 
 
 @Component({
@@ -13,36 +12,14 @@ import { MapWeatherServiceService } from '../mapWeatherService.service';
 
 export class UiMapComponent implements OnInit {
 
-  lat: string;
-  long: string;
-
-  constructor(private data: MapWeatherServiceService) { 
-      this.data.currentMessageLat.subscribe((lat) => {
-        this.lat = lat;
-        });
-        console.log(this.lat );
-        
-      this.data.currentMessageLong.subscribe((long) => {
-        this.long = long;
-        });
-        console.log(this.long );
-
-      
-      // if (this.geoCode()) {
-      //   this.lat = this.geoCode().geoCodeResult.geometry.coordinates[1].toString()
-      // this.data.changeMessageLat(this.lat);
-      // this.data.changeMessageLong(this.long);
-      // }
-  }
+  constructor() { }
 
 
 // CREATE MAP AND MARKER ON LOAD
 ngOnInit() {
-  // this.data.currentMessageLat.subscribe(lat => this.lat = lat);
-  // this.data.currentMessageLong.subscribe(long => this.long = long);
   this.geoCode();
-  this.initMap();
   this.initMarker();
+  this.initMap();
 
 }
 
@@ -55,7 +32,7 @@ const map = new mapboxgl.Map({
     container: 'map',
     style: 'mapbox://styles/mapbox/streets-v11',
     center: [-98.491142, 29.424349],
-    zoom: 7
+    zoom: 8
   });
 
   // Puts geocoder input in top-left
@@ -105,24 +82,10 @@ mapboxgl
     console.log(geoCodeResult);
 
   // These return the string versions of the geocoder result LAT/LONG
-  this.lat = geoCodeResult.geometry.coordinates[1].toString();
-  console.log(typeof this.lat, this.lat);
-  this.long = geoCodeResult.geometry.coordinates[0].toString();
-  console.log(typeof this.long, this.long);
-
-  // This is suppossed to return the string versions of geocoder result LAT/LONG to
-  // the MapWeatherServiceService, however I get undefined only. Which is not true since
-  // the above console.logs show the values, so the error is between the comp & service
-  // this.data.changeMessageLat(geoCodeResult.geometry.coordinates[1].toString());
-  
-            // ---> Trying this in constructor instead  <--- \\
-                          //  Did not work  \\
-
-  // this.data.changeMessageLat(this.lat)
-  this.data.changeMessageLong(geoCodeResult.geometry.coordinates[0].toString());
+      // lat = geoCodeResult.geometry.coordinates[1].toString();
+      // long = geoCodeResult.geometry.coordinates[0].toString();
   });
   
-  // console.log('LAT: ' + this.lat + ', LONG: ' + this.long);
   return geocoder;
 }
 
@@ -168,8 +131,6 @@ if (geocodes.length === 0) {
 geocodes.push(coordinateFeature(coord1, coord2));
 geocodes.push(coordinateFeature(coord2, coord1));
 }
-
-console.log('This is from coordinatesGeocoder: ' + geocodes);
 return geocodes;
 };
 

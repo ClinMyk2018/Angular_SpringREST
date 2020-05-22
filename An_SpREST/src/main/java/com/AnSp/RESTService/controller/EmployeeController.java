@@ -23,12 +23,12 @@ import org.springframework.web.bind.annotation.RestController;
 import com.AnSp.RESTService.beans.EmployeeDTO;
 import com.AnSp.RESTService.exception.ResourceNotFoundException;
 import com.AnSp.RESTService.model.Employee;
-import com.AnSp.RESTService.repository.EmployeeRepository;
+// import com.AnSp.RESTService.repository.EmployeeRepository;
 import com.AnSp.RESTService.service.EmployeeService;
 
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
-@RequestMapping("/api/v1")
+@RequestMapping("/api")
 public class EmployeeController {
 	
 	@Autowired
