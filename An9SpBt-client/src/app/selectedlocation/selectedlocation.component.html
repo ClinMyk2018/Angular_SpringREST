@@ -6,7 +6,9 @@
 <br>
 <hr />
 <div class="container">
+
   <div class="row">
+
     <!-- This will be the Map -->
     <div class="col-sm-4">
       <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
@@ -16,6 +18,7 @@
           cap</text>
       </svg>
     </div>
+
     <!-- This will be the current forecast -->
     <div class="col-sm-8">
       <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
@@ -27,46 +30,185 @@
     </div>
   </div>
   <br>
+
+
   <div class="row">
     <div class="col-sm card text-center">
       <div class="card-header">
-        <ul class="nav nav-tabs card-header-tabs">
+        <ul class="nav nav-tabs nav-justified md-tabs indigo" id="myTabJust" role="tablist">
+
           <li class="nav-item">
-            <a class="nav-link active" href="#">Active</a>
+            <a class="nav-link active" id="day3-tab-just" data-toggle="tab" href="#day3-just" role="tab"
+              aria-controls="day3-just" aria-selected="true">3 Day Forecast</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+            <a class="nav-link" id="day5-tab-just" data-toggle="tab" href="#day5-just" role="tab"
+              aria-controls="day5-just" aria-selected="false">5 Day Forecast</a>
           </li>
+
           <li class="nav-item">
-            <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            <a class="nav-link" id="charts-tab-just" data-toggle="tab" href="#charts-just" role="tab"
+              aria-controls="charts-just" aria-selected="false">Charts</a>
           </li>
+
         </ul>
       </div>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This content is
-          a little longer.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
+    </div>
+  </div>
 
-        <hr />
-        <div>
-          <div>
-            <label><b>Location Name: </b></label> {{location.locationName}}
+</div>
+
+<div class="tab-content card pt-5" id="myTabContentJust">
+  <div class="tab-pane fade show active" id="day3-just" role="tabpanel" aria-labelledby="day3-tab-just">
+
+    <div class="container">
+
+      <div class="row align-items-start">
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
-          <div>
-            <label><b>Location Lat: </b></label> {{location.locationLat}}
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
-          <div>
-            <label><b>Location Long: </b></label> {{location.locationLong}}
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
           </div>
         </div>
       </div>
     </div>
   </div>
-          <!-- <h5 class="card-title">{{currentTime | date : 'fullDate'}}</h5> -->
-          <!-- <p class="card-text">{{todaysSummary}}</p> -->
-         
-        <!-- <ul class="list-group list-group-flush">
+
+  <div class="tab-pane fade" id="day5-just" role="tabpanel" aria-labelledby="day5-tab-just">
+
+    <div class="container">
+
+      <div class="row justify-content-center">
+
+        <div class="col-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-5">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row align-items-start">
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <div class="card">
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
+                content is a little longer.</p>
+              <a href="#" class="btn btn-primary">Go somewhere</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="tab-pane fade" id="charts-just" role="tabpanel" aria-labelledby="charts-tab-just">
+    <h3>Charts Will Go Here</h3>
+
+    <div class="row">
+
+      <div class="col-sm-4">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
+          aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image
+            cap</text>
+        </svg>
+      </div>
+
+      <div class="col-sm-4">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
+          aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image
+            cap</text>
+        </svg>
+      </div>
+
+      <div class="col-sm-4">
+        <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
+          aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+          <title>Placeholder</title>
+          <rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image
+            cap</text>
+        </svg>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+<!-- <h5 class="card-title">{{currentTime | date : 'fullDate'}}</h5> -->
+<!-- <p class="card-text">{{todaysSummary}}</p> -->
+
+<!-- <ul class="list-group list-group-flush">
           <li class="list-group-item">Temp: {{temperature}}</li>
           <li class="list-group-item">DP: {{dewPoint}}</li>
           <li class="list-group-item">Humidity: {{humidity}}</li>
@@ -76,10 +218,7 @@
           <li class="list-group-item">Wind Speed: {{windSpeed}}kt</li>
           <li class="list-group-item">Gust: {{windGust}}kt</li>
         </ul> -->
-</div>
 
-
-<br>
 <br>
 <button (click)="list()" class="btn btn-primary">See All Saved Locations</button>
 <button (click)="updateLocation(location.locationId)" class="btn btn-info" style="margin-left: 10px">Update</button>
