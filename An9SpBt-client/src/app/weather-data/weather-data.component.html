@@ -178,9 +178,9 @@
         <p class="card-text">{{todaysSummary}}</p>
       </div>
       <ul class="list-group list-group-flush">
-        <li class="list-group-item">Temp: {{temperature}}</li>
-        <li class="list-group-item">DP: {{dewPoint}}</li>
-        <li class="list-group-item">Humidity: {{humidity}}</li>
+        <li class="list-group-item">Temp: {{temperature.value}} {{temperature.units}}</li>
+        <li class="list-group-item">DP: {{dewPoint.value}} {{dewPoint.units}}</li>
+        <li class="list-group-item">Humidity: {{humidity.value}} {{humidity.units}}</li>
         <li class="list-group-item">Visibility: {{visibility}}km</li>
         <li class="list-group-item">Pressure: {{pressure}}mb</li>
         <li class="list-group-item">Wind Direction: {{windBearing}}</li>

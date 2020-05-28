@@ -13,6 +13,10 @@ export const environment = {
 
 darksky: {
   accessToken: 'Your_Key'
+},
+
+climacell: {
+  accessToken: 'Your_Key'
 }
 
 };
