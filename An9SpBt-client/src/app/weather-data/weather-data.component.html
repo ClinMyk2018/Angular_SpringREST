@@ -1,4 +1,3 @@
-
 <!-- 3 day start -->
 <div class="tab-content card pt-5" id="myTabContentJust">
   <div class="tab-pane fade show active" id="day3-just" role="tabpanel" aria-labelledby="day3-tab-just">
@@ -10,9 +9,22 @@
         <div class="col-4 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+              <h5>{{currentTimeDayOne | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayOne.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayOne}} {{temperatureUnitDayOne}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayOne}} {{humidityUnitDayOne}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayOne}} {{visibilityUnitDayOne}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayOne | number: '.1-2'}} {{pressureUnitDayOne}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayOne}} {{windBearingUnitDayOne}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayOne}} {{windSpeedUnitDayOne}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -21,9 +33,22 @@
         <div class="col-4 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+              <h5>{{currentTimeDayTwo | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayTwo.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayTwo}} {{temperatureUnitDayTwo}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayTwo}} {{humidityUnitDayTwo}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayTwo}} {{visibilityUnitDayTwo}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayTwo | number: '.1-2'}} {{pressureUnitDayTwo}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayTwo}} {{windBearingUnitDayTwo}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayTwo}} {{windSpeedUnitDayTwo}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -32,9 +57,22 @@
         <div class="col-4 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+              <h5>{{currentTimeDayThree | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayThree.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayThree}} {{temperatureUnitDayThree}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayThree}} {{humidityUnitDayThree}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayThree}} {{visibilityUnitDayThree}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayThree | number: '.1-2'}} {{pressureUnitDayThree}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayThree}} {{windBearingUnitDayThree}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayThree}} {{windSpeedUnitDayThree}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -53,9 +91,22 @@
         <div class="col-5 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+               <h5>{{currentTimeDayOne | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayOne.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayOne}} {{temperatureUnitDayOne}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayOne}} {{humidityUnitDayOne}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayOne}} {{visibilityUnitDayOne}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayOne | number: '.1-2'}} {{pressureUnitDayOne}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayOne}} {{windBearingUnitDayOne}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayOne}} {{windSpeedUnitDayOne}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -64,9 +115,22 @@
         <div class="col-5 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+               <h5>{{currentTimeDayTwo | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayTwo.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayTwo}} {{temperatureUnitDayTwo}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayTwo}} {{humidityUnitDayTwo}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayTwo}} {{visibilityUnitDayTwo}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayTwo | number: '.1-2'}} {{pressureUnitDayTwo}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayTwo}} {{windBearingUnitDayTwo}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayTwo}} {{windSpeedUnitDayTwo}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -78,9 +142,22 @@
         <div class="col-4 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+               <h5>{{currentTimeDayThree | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayThree.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayThree}} {{temperatureUnitDayThree}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayThree}} {{humidityUnitDayThree}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayThree}} {{visibilityUnitDayThree}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayThree | number: '.1-2'}} {{pressureUnitDayThree}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayThree}} {{windBearingUnitDayThree}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayThree}} {{windSpeedUnitDayThree}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -89,9 +166,22 @@
         <div class="col-4 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+               <h5>{{currentTimeDayFour | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayFour.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayFour}} {{temperatureUnitDayFour}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayFour}} {{humidityUnitDayFour}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayFour}} {{visibilityUnitDayFour}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayFour | number: '.1-2'}} {{pressureUnitDayFour}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayFour}} {{windBearingUnitDayFour}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayFour}} {{windSpeedUnitDayFour}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -100,9 +190,22 @@
         <div class="col-4 mb-3">
           <div class="card">
             <div class="card-body">
-              <h5 class="card-title">Special title treatment</h5>
-              <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This
-                content is a little longer.</p>
+               <h5>{{currentTimeDayFive | date : 'fullDate'}}</h5>
+              <br>
+              <h5>Summary: {{todaysSummaryDayFive.replace('_', ' ')}}</h5>
+              <br>
+              <label><b>Temperature: </b></label> {{temperatureValDayFive}} {{temperatureUnitDayFive}}
+              <br>
+              <label><b> Humidity: </b></label> {{humidityValDayFive}} {{humidityUnitDayFive}}
+              <br>
+              <label><b> Visibility: </b></label> {{visibilityValDayFive}} {{visibilityUnitDayFive}} 
+              <br>
+              <label><b> Pressure: </b></label> {{pressureValDayFive | number: '.1-2'}} {{pressureUnitDayFive}}
+              <br>
+              <label><b> Wind Direction: </b></label> {{windBearingValDayFive}} {{windBearingUnitDayFive}}
+              <br>
+              <label><b> Wind Speed: </b></label> {{windSpeedValDayFive}} {{windSpeedUnitDayFive}}
+              <br>
               <a href="#" class="btn btn-primary">Go somewhere</a>
             </div>
           </div>
@@ -142,7 +245,7 @@
             cap</text>
         </svg>
       </div>
-      
+
       <div class="col-sm-6 my-3">
         <svg class="bd-placeholder-img card-img-top" width="100%" height="200" xmlns="http://www.w3.org/2000/svg"
           aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
@@ -156,50 +259,44 @@
 </div>
 
 
-<div class="card text-center">
-    <div class="card-header">
-      <ul class="nav nav-tabs card-header-tabs">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Active</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-        </li>
-      </ul>
-    </div>
-    <div class="card" style="width: 26rem;">
-      <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg" aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img"><title>Placeholder</title><rect width="100%" height="100%" fill="#868e96"/><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text></svg>
-    
-      <div class="card-body">
-        <h5 class="card-title">{{currentTime | date : 'fullDate'}}</h5>
-        <p class="card-text">{{todaysSummary}}</p>
-      </div>
-      <ul class="list-group list-group-flush">
-        <li class="list-group-item">Temp: {{temperature.value}} {{temperature.units}}</li>
-        <li class="list-group-item">DP: {{dewPoint.value}} {{dewPoint.units}}</li>
-        <li class="list-group-item">Humidity: {{humidity.value}} {{humidity.units}}</li>
-        <li class="list-group-item">Visibility: {{visibility}}km</li>
-        <li class="list-group-item">Pressure: {{pressure}}mb</li>
-        <li class="list-group-item">Wind Direction: {{windBearing}}</li>
-        <li class="list-group-item">Wind Speed: {{windSpeed}}kt</li>
-        <li class="list-group-item">Gust: {{windGust}}kt</li>
-      </ul>
-      <div class="card-body">
-        <a href="#" class="card-link">Print Forecast</a>
-        <a href="#" class="card-link">Some Oter Btn</a>
-      </div>
+<!-- <div class="card text-center">
+  <div class="card-header">
+    <ul class="nav nav-tabs card-header-tabs">
+      <li class="nav-item">
+        <a class="nav-link active" href="#">Active</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link" href="#">Link</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+      </li>
+    </ul>
   </div>
-    <!-- <div class="card-body">
+  <div class="card" style="width: 26rem;">
+    <svg class="bd-placeholder-img card-img-top" width="100%" height="180" xmlns="http://www.w3.org/2000/svg"
+      aria-label="Placeholder: Image cap" preserveAspectRatio="xMidYMid slice" role="img">
+      <title>Placeholder</title>
+      <rect width="100%" height="100%" fill="#868e96" /><text x="50%" y="50%" fill="#dee2e6" dy=".3em">Image cap</text>
+    </svg>
+
+    <div class="card-body">
       <h5 class="card-title">{{currentTime | date : 'fullDate'}}</h5>
-      <p class="card-text">It's a broader card with text below as a natural lead-in to extra content. This content is a little longer.</p>
-      <a href="#" class="btn btn-primary">Go somewhere</a>
-    </div> -->
-</div>
-
-
-<div>
-  <h2>Weather Message: {{long}}</h2>
-</div>
+      <p class="card-text">{{todaysSummary}}</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Temp: {{temperatureVal}} {{temperatureUnit}}</li>
+      <li class="list-group-item">DP: {{dewPointVal}} {{dewPointUnit}}</li>
+      <li class="list-group-item">Humidity: {{humidityVal}} {{humidityUnit}}</li>
+      <li class="list-group-item">Visibility: {{visibilityVal}} {{visibilityUnit}} </li>
+      <li class="list-group-item">Pressure: {{pressureVal | number: '.1-2'}} {{pressureUnit}} </li>
+      <li class="list-group-item">Wind Direction: {{windBearingVal}} {{windBearingUnit}} </li>
+      <li class="list-group-item">Wind Speed: {{windSpeedVal}} {{windSpeedUnit}}</li>
+      <li class="list-group-item">Gust: {{windGustVal}} {{windGustUnit}} </li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Print Forecast</a>
+      <a href="#" class="card-link">Some Oter Btn</a>
+    </div>
+  </div>
+</div> -->
