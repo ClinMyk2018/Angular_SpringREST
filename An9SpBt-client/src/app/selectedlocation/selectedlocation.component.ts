@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { UserSavedLocations } from "../UserSavedLocations";
+import { WeatherDataComponent } from "../weather-data/weather-data.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserSavedLocationsService } from "../user-saved-locations.service";
 import { AllLocationsComponent } from "../all-locations/all-locations.component";
@@ -12,6 +13,8 @@ import { AllLocationsComponent } from "../all-locations/all-locations.component"
 export class SelectedlocationComponent implements OnInit {
   locationId: number;
   location: UserSavedLocations;
+  locLat: any;
+  locLon: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -30,6 +33,9 @@ export class SelectedlocationComponent implements OnInit {
         (data) => {
           console.log(data);
           this.location = data;
+          this.locLat = this.location.locationLat;
+          console.log(this.locLat);
+          this.locLon = this.location.locationLong;
         },
         (error) => console.log(error)
       );

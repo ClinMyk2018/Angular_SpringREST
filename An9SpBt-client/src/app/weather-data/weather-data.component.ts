@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { environment } from '../../environments/environment';
+import { SelectedlocationComponent } from "../selectedlocation/selectedlocation.component";
+import { UserSavedLocations } from "../UserSavedLocations";
 import { UiMapComponent } from '../ui-map/ui-map.component';
 import { MapWeatherServiceService } from '../mapWeatherService.service';
 import { Router } from '@angular/router';
@@ -11,6 +13,9 @@ import {HttpClient} from '@angular/common/http';
   styleUrls: ['./weather-data.component.css']
 })
 export class WeatherDataComponent implements OnInit {
+
+  locLat= "29";
+  locLon= "-98";
 
   constructor(private http: HttpClient ) { }
   
@@ -112,7 +117,7 @@ export class WeatherDataComponent implements OnInit {
   
   ngOnInit(): void {
 
-      this.loadWeatherData();
+    this.loadWeatherData();
 
   }
 
@@ -120,7 +125,8 @@ export class WeatherDataComponent implements OnInit {
     
     const apiKey = environment.climacell.accessToken;
     this.http.get('https://api.climacell.co/v3/weather/forecast/daily?' +
-    'lat=29&lon=-98&unit_system=us&start_time=now&'+
+    'lat=' + this.locLat + '&lon='+this.locLon +
+    '&unit_system=us&start_time=now&'+
     'fields=precipitation%2Cprecipitation_accumulation%2Ctemp%2Cfeels_like%2Cwind_speed%2Cbaro_pressure%2Cvisibility%2Chumidity%2Cwind_direction%2Csunrise%2Csunset%2Cmoon_phase%2Cweather_code'+
     '&apikey=' + apiKey)
     .subscribe(data => {
@@ -133,7 +139,7 @@ export class WeatherDataComponent implements OnInit {
       let dayFiveForecast = this.weatherData[4];
 
       this.currentTimeDayOne = dayOneForecast.observation_time.value;
-      this.todaysSummaryDayOne = dayOneForecast.weather_code.value; // LOOK INTO GETTING RID OF UNDERSCORE
+      this.todaysSummaryDayOne = dayOneForecast.weather_code.value; 
       this.temperatureValDayOne = Math.round(dayOneForecast.temp[0].min.value);
       this.temperatureUnitDayOne = dayOneForecast.temp[0].min.units;
       this.humidityValDayOne = Math.round(dayOneForecast.humidity[0].min.value);
@@ -148,7 +154,7 @@ export class WeatherDataComponent implements OnInit {
       this.windSpeedUnitDayOne = dayOneForecast.wind_speed[0].min.units;
       
       this.currentTimeDayTwo = dayTwoForecast.observation_time.value;
-      this.todaysSummaryDayTwo = dayTwoForecast.weather_code.value; // LOOK INTO GETTING RID OF UNDERSCORE
+      this.todaysSummaryDayTwo = dayTwoForecast.weather_code.value; 
       this.temperatureValDayTwo = Math.round(dayTwoForecast.temp[0].min.value);
       this.temperatureUnitDayTwo = dayTwoForecast.temp[0].min.units;
       this.humidityValDayTwo = Math.round(dayTwoForecast.humidity[0].min.value);
@@ -162,8 +168,8 @@ export class WeatherDataComponent implements OnInit {
       this.windSpeedValDayTwo = Math.round(dayTwoForecast.wind_speed[0].min.value);
       this.windSpeedUnitDayTwo = dayTwoForecast.wind_speed[0].min.units;
       
-     this.currentTimeDayThree = dayThreeForecast.observation_time.value;
-      this.todaysSummaryDayThree = dayThreeForecast.weather_code.value; // LOOK INTO GETTING RID OF UNDERSCORE
+      this.currentTimeDayThree = dayThreeForecast.observation_time.value;
+      this.todaysSummaryDayThree = dayThreeForecast.weather_code.value; 
       this.temperatureValDayThree = Math.round(dayThreeForecast.temp[0].min.value);
       this.temperatureUnitDayThree = dayThreeForecast.temp[0].min.units;
       this.humidityValDayThree = Math.round(dayThreeForecast.humidity[0].min.value);
@@ -177,8 +183,8 @@ export class WeatherDataComponent implements OnInit {
       this.windSpeedValDayThree = Math.round(dayThreeForecast.wind_speed[0].min.value);
       this.windSpeedUnitDayThree = dayThreeForecast.wind_speed[0].min.units;
       
-     this.currentTimeDayFour = dayFourForecast.observation_time.value;
-      this.todaysSummaryDayFour = dayFourForecast.weather_code.value; // LOOK INTO GETTING RID OF UNDERSCORE
+      this.currentTimeDayFour = dayFourForecast.observation_time.value;
+      this.todaysSummaryDayFour = dayFourForecast.weather_code.value; 
       this.temperatureValDayFour = Math.round(dayFourForecast.temp[0].min.value);
       this.temperatureUnitDayFour = dayFourForecast.temp[0].min.units;
       this.humidityValDayFour = Math.round(dayFourForecast.humidity[0].min.value);
@@ -192,8 +198,8 @@ export class WeatherDataComponent implements OnInit {
       this.windSpeedValDayFour = Math.round(dayFourForecast.wind_speed[0].min.value);
       this.windSpeedUnitDayFour = dayFourForecast.wind_speed[0].min.units;
       
-     this.currentTimeDayFive = dayFiveForecast.observation_time.value;
-      this.todaysSummaryDayFive = dayFiveForecast.weather_code.value; // LOOK INTO GETTING RID OF UNDERSCORE
+      this.currentTimeDayFive = dayFiveForecast.observation_time.value;
+      this.todaysSummaryDayFive = dayFiveForecast.weather_code.value; 
       this.temperatureValDayFive = Math.round(dayFiveForecast.temp[0].min.value);
       this.temperatureUnitDayFive = dayFiveForecast.temp[0].min.units;
       this.humidityValDayFive = Math.round(dayFiveForecast.humidity[0].min.value);
