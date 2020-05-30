@@ -212,20 +212,25 @@ export class WeatherDataComponent implements OnInit {
       this.windBearingUnitDayFive = dayFiveForecast.wind_direction[0].min.units;
       this.windSpeedValDayFive = Math.round(dayFiveForecast.wind_speed[0].min.value);
       this.windSpeedUnitDayFive = dayFiveForecast.wind_speed[0].min.units;
-      
-    })
 
-    //   // THIS IS FOR HOURLY WEATHER UP TO 360 hours
-    // this.http.get('https://api.climacell.co/v3/weather/nowcast?' +
-    // 'lat=29&lon=-98&unit_system=us&' +
-    // 'timestep=60&start_time=now&'+
-    // 'fields=precipitation%2Cprecipitation_type%2Ctemp%2Cfeels_like%2Cdewpoint%2Cwind_speed%2Cwind_gust%2Cbaro_pressure%2Cvisibility%2Chumidity%2Cwind_direction%2Csunrise%2Csunset%2Ccloud_cover%2Ccloud_ceiling%2Ccloud_base%2Csurface_shortwave_radiation%2Cweather_code'+
-    // '&apikey=' + apiKey)
-    // .subscribe(data => {
-    //   // THIS GETS THE WHOLE OBJECT FOR USE
-    //   this.weatherData = data;
-    //   let hourOneForecast = this.weatherData[0]
-    //   console.log(hourOneForecast);
+      })
+      
+
+      // THIS IS FOR HOURLY WEATHER UP TO 360 hours
+    this.http.get('https://api.climacell.co/v3/weather/nowcast?' +
+    'lat=29.424&lon=-98.493&unit_system=us&' +
+    'timestep=60&start_time=now&'+
+    'fields=precipitation%2Cprecipitation_type%2Ctemp%2Cfeels_like%2Cdewpoint%2Cwind_speed%2Cwind_gust%2Cbaro_pressure%2Cvisibility%2Chumidity%2Cwind_direction%2Csunrise%2Csunset%2Ccloud_cover%2Ccloud_ceiling%2Ccloud_base%2Csurface_shortwave_radiation%2Cweather_code'+
+    '&apikey=' + apiKey)
+    .subscribe(data => {
+      // THIS GETS THE WHOLE OBJECT FOR USE
+      this.weatherData = data;
+      let hourOneForecast = this.weatherData[0]
+      let hourTwoForecast = this.weatherData[1]
+      let hourThreeForecast = this.weatherData[2]
+      console.log(hourOneForecast);
+      console.log(hourTwoForecast);
+      console.log(hourThreeForecast);
 
     //   this.currentTime = hourOneForecast.observation_time.value;
     //   this.todaysSummary = hourOneForecast.weather_code.value;
@@ -245,7 +250,8 @@ export class WeatherDataComponent implements OnInit {
     //   this.windSpeedUnit = hourOneForecast.wind_speed.units;
     //   this.windGustVal = Math.round(hourOneForecast.wind_gust.value);
     //   this.windGustUnit = hourOneForecast.wind_gust.units;
-  }
+  })
 
+  }
 
 }
