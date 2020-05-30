@@ -14,8 +14,8 @@ import {HttpClient} from '@angular/common/http';
 })
 export class WeatherDataComponent implements OnInit {
 
-  locLat= "29";
-  locLon= "-98";
+  locLat= "29.424";
+  locLon= "-98.493";
 
   constructor(private http: HttpClient ) { }
   
@@ -218,7 +218,7 @@ export class WeatherDataComponent implements OnInit {
 
       // THIS IS FOR HOURLY WEATHER UP TO 360 hours
     this.http.get('https://api.climacell.co/v3/weather/nowcast?' +
-    'lat=29.424&lon=-98.493&unit_system=us&' +
+    'lat=' + this.locLat + '&lon='+ this.locLon + '&unit_system=us&' +
     'timestep=60&start_time=now&'+
     'fields=precipitation%2Cprecipitation_type%2Ctemp%2Cfeels_like%2Cdewpoint%2Cwind_speed%2Cwind_gust%2Cbaro_pressure%2Cvisibility%2Chumidity%2Cwind_direction%2Csunrise%2Csunset%2Ccloud_cover%2Ccloud_ceiling%2Ccloud_base%2Csurface_shortwave_radiation%2Cweather_code'+
     '&apikey=' + apiKey)

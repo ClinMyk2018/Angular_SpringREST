@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from "@angular/core";
 import { UserSavedLocations } from "../UserSavedLocations";
+import { environment } from '../../environments/environment';
 import { WeatherDataComponent } from "../weather-data/weather-data.component";
 import { ActivatedRoute, Router } from "@angular/router";
 import { UserSavedLocationsService } from "../user-saved-locations.service";
@@ -15,6 +16,7 @@ export class SelectedlocationComponent implements OnInit {
   location: UserSavedLocations;
   locLat: any;
   locLon: any;
+  apiKey: any;
 
   constructor(
     private route: ActivatedRoute,
@@ -23,6 +25,9 @@ export class SelectedlocationComponent implements OnInit {
   ) {}
 
   ngOnInit() {
+
+    this.apiKey = environment.climacell.accessToken;
+
     this.location = new UserSavedLocations();
 
     this.locationId = this.route.snapshot.params["locationId"];
