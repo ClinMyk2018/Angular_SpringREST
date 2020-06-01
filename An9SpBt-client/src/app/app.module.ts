@@ -10,7 +10,6 @@ import { HttpClientModule } from '@angular/common/http';
 import { UpdateEmployeeComponent } from './update-employee/update-employee.component';
 import { UiMapComponent } from './ui-map/ui-map.component';
 import { WeatherDataComponent } from './weather-data/weather-data.component';
-import { MapWeatherServiceService } from './mapWeatherService.service';
 import { AllLocationsComponent } from './all-locations/all-locations.component';
 import { SelectedlocationComponent } from './selectedlocation/selectedlocation.component';
 import { UpdatelocationComponent } from './updatelocation/updatelocation.component';
