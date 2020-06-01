@@ -4,7 +4,8 @@ import { NgModule } from "@angular/core";
 import { Routes, RouterModule } from "@angular/router";
 import { EmployeeListComponent } from "./employee-list/employee-list.component";
 import { UpdateEmployeeComponent } from "./update-employee/update-employee.component";
-import { UiMapComponent } from "./ui-map/ui-map.component";
+// import { UiMapComponent } from "./ui-map/ui-map.component";
+import { WeatherDataComponent } from "./weather-data/weather-data.component";
 import { AllLocationsComponent } from "./all-locations/all-locations.component";
 import { SelectedlocationComponent } from "./selectedlocation/selectedlocation.component";
 import { UpdatelocationComponent } from "./updatelocation/updatelocation.component";
@@ -17,6 +18,7 @@ const routes: Routes = [
   { path: "update/:id", component: UpdateEmployeeComponent },
   { path: "details/:id", component: EmployeeDetailsComponent },
   // { path: 'map', component: UiMapComponent },
+  { path: 'weather', component: WeatherDataComponent },
   { path: "locations", component: AllLocationsComponent },
   { path: "addlocation", component: NewLocationComponent },
   {
